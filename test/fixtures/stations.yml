@@ -8,7 +8,7 @@ one:
   capacity: 12 
   lat: 59.91459878869395 
   lon: 10.753398500006654
-  bike_vacancy: nil
+  bikes_available: 12
 
 two:
   id: 599
@@ -18,5 +18,4 @@ two:
   capacity: 48 
   lat: 59.910331 
   lon: 10.75011 
-  bike_vacancy: nil
-
+  bikes_available: 26
