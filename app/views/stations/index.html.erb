@@ -4,11 +4,24 @@
 
 <h1>Stations</h1>
 
+<p>This is an up to date list of all Oslo Bysykkel station, according to their API.</p>
+<p>You might want to get this in JSON, just add ".json" to the URL.</p>
+
 <div id="stations">
-  <% @stations.each do |station| %>
-    <%= render station %>
-    <p>
-      <%= link_to "Show this station", station %>
-    </p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Bikes available</th>
+      <th>Last reported</th>
+    </tr>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%= link_to station.name, station %></td>
+        <td><%= station.capacity %></td>
+        <td><%= station.bikes_available %></td>
+        <td><%= station.updated_at %></td>
+      </tr>
   <% end %>
+  </table>
 </div>
