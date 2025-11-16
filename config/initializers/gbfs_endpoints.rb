@@ -1,4 +1,4 @@
-GBFS_ENDPOINTS = %w[
+GBFS_ENDPOINTS = %i[
   gbfs
   system_information
   vehicle_types

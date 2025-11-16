@@ -24,7 +24,7 @@ class Bysykkel
   end
 
   def method_missing(method_name, *args, &block)
-    if GBFS_ENDPOINTS.include?(method_name.to_s)
+    if GBFS_ENDPOINTS.include?(method_name)
       get_file(method_name)
     else
       super
@@ -33,5 +33,9 @@ class Bysykkel
 
   def respond_to_missing?(method_name, include_private = false)
     GBFS_ENDPOINTS.include?(method_name.to_s) || super
+  end
+
+  def self.methods
+    GBFS_ENDPOINTS + super
   end
 end
