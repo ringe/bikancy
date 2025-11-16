@@ -1,0 +1,22 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 2308
+  name:  Gunerius  
+  address:  Storgata 33  
+  cross_street:  utenfor Storgata 33  
+  capacity: 12 
+  lat: 59.91459878869395 
+  lon: 10.753398500006654
+  bike_vacancy: nil
+
+two:
+  id: 599
+  name:  Paléhaven  
+  address:  Palehaven  
+  cross_street:  langs Strandgata  
+  capacity: 48 
+  lat: 59.910331 
+  lon: 10.75011 
+  bike_vacancy: nil
+
