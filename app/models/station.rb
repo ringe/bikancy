@@ -9,6 +9,7 @@ class Station
   attribute :capacity,     :integer
   attribute :lat,          :float
   attribute :lon,          :float
+  attribute :updated_at,   :datetime
 
   attribute :bikes_available, :integer
 
@@ -47,6 +48,7 @@ class Station
       atts = station.slice(*Station.attribute_names)
 
       status = statuses.find { |s| s["station_id"] == station["station_id"] }
+      atts["updated_at"] = Time.at(status["last_reported"]) rescue nil
       atts["bikes_available"] = status["num_bikes_available"] rescue nil
 
       Station.new(atts)
