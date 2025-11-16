@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dette er en standard Ruby on Rails-applikasjon som kjøres i Docker. 
+Du trenger **ikke** å ha Ruby eller Rails installert lokalt – kun Docker (og eventuelt Docker Compose).
 
-Things you may want to cover:
+## Forutsetninger
 
-* Ruby version
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-* System dependencies
+evt. Docker Desktop
 
-* Configuration
+## Første gangs oppstart
 
-* Database creation
+```bash
+docker compose up
+```
 
-* Database initialization
+Åpne http://localhost:3000
 
-* How to run the test suite
+## Database
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+SQLite i storage/ (Rails 8 default)
