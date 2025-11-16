@@ -39,9 +39,16 @@ class Station
 
   def self.fetch_from_bysykkel
     api = Bysykkel.new
+
+    statuses = api.station_status.dig("data", "stations")
+
     json = api.station_information
     stations = json.dig("data", "stations").collect do |station|
       atts = station.slice(*Station.attribute_names)
+
+      status = statuses.find { |s| s["station_id"] == station["station_id"] }
+      atts["bikes_available"] = status["num_bikes_available"] rescue nil
+
       Station.new(atts)
     end
   end
